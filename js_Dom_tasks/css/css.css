@@ -1,0 +1,210 @@
+
+/* task 5 -7 */
+
+/* .main__block {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.main__block-yellow {
+    background-color: rgb(255, 255, 87);
+}
+
+.main__block-red {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(226, 38, 38);
+}
+
+.main__block-green {
+    width: 50px;
+    height: 25px;
+    background-color: rgb(34, 153, 34);
+}
+
+.main__input {
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+}
+
+.main__button {
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+.hide {
+    visibility: hidden;
+} */
+
+
+
+/* .main__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__button {
+    display: inline-block;
+    margin: 40px;
+}
+
+.main__input {
+    display: inline-block;
+}
+
+.hide {
+    display: none
+} */
+
+
+
+/* task 10 - 12 */
+/* main {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+}
+
+.header__block-info{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+} */
+
+/* task 13 */
+
+/* .header__input {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+} */
+
+/* task 14 */
+
+/* .main__button {
+    display: none;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 100px;
+    left: 10pxpx;
+    border: 1px solid black;
+
+}
+
+main {
+    height: 200vh;
+} */
+
+/* task 15 */
+
+/* .main__block {
+    display: flex;
+    width: 150px;
+    height: 200px;
+    background-color: bisque;
+    text-align: center;
+    align-items: center;
+}
+
+.main__block--inner {
+    width: 70px;
+    height: 70px;
+    background-color: blue;
+} */
+
+/* task 16 */
+
+/* .main__button {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+#main {
+    height: 200vh;
+}
+
+.hide {
+    display: none;
+} */
+
+/* task 17 */
+
+/* .main__input-file {
+    visibility: hidden;
+}
+.main__input-file-ob {
+    width: 250px;
+    height: 50px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px #000;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+} */
+
+
+/* task 18.2 */
+
+body {
+    background-color: rgba(82, 63, 97, 0.333);
+    
+}
+
+.main__header {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    min-width: min-content;
+    height: 200px;
+    min-height: min-content;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px #000;
+    text-align: center;
+}
+
+.main__upload-button {
+    display: none;
+}
+
+
+label {
+    min-width: 200px;
+    min-height: 50px;
+    background-color: crimson ;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 2px;
+}
+
+.active {
+    border: 6px double crimson;
+}
+
+#image-display {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#error {
+    font-size: 30px;
+    color: rgb(255, 114, 114);
+    text-shadow: 3px 3px 10px #000;
+}
