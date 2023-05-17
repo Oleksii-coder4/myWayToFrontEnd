@@ -59,25 +59,42 @@ const csvParse = function(tableText) {
     let objectOfCities = arrayOfCities.reduce(function(previosValue, item, index, array) {
         previosValue[item.name] = item
         return previosValue
-    }, {})
-
+    }, {});
+    console.log(objectOfCities)
     // alert(invalidItems, 'Ці рядки були введені невалідно')
     // функция которую вернет основная
     return function(str) {
+        // перебор обьекта с городами, создание массива названий городов
         let arrayOfCitiesNames = Object.keys(objectOfCities).map(function(key, index) {
             return objectOfCities[key].name
         })
         // alert(arrayOfCitiesNames)
         console.log(arrayOfCitiesNames)
-        let nameOfCity = 'Кропивницький'  //prompt('Введіть назву міста про яку хочете отримати інформацію серед перерахованих')
-        nameOfCity.replace(nameOfCity, objectOfCities.nameOfCity)
-        console.log(nameOfCity)
+        // создание регулярного выражения на подобии Krop|Kyiv
+        let regexNamesOfCities = new RegExp(arrayOfCitiesNames.join('|'), 'gi' )
+        // тестовая строка, потом будет str, а вообще будет через prompt
+        let Str = 'Кропивницький - супер місто, Алушта, Джанкой'
+        // поиск совпадающих названий городов, создание массива на основе совпадений
+        let namesOfCitiesInStr = Str.match(regexNamesOfCities)
+        // замена слов в строке, перебираю массив ИЗ названий городов в переданной строке, в этом цикле перебираю сам обьект городов с инфой,
+        // сравниваю название города из массива с названием города из обьекта, если совпадает то создаю 1 регулярныое выражение, что бы потом с помощью реплейс подставить вместо названия города инфу про него
+        namesOfCitiesInStr.forEach(function(item,index,array) {
+            Object.keys(objectOfCities).forEach(function(key, junIndex) {
+                if(namesOfCitiesInStr[index] == objectOfCities[key].name) {
+                    let regexOfSearchingValue = new RegExp(namesOfCitiesInStr[index])
+                    let finalStr = Str.replace(regexOfSearchingValue, JSON.stringify(objectOfCities[key])) // json.stingify превращает обьект в формат джейсон, тогда он нормально отображается в строке, а не вот это [object Object]
+                    console.log(finalStr)
+                }
+            })
+        });
     }
-}
+};
 // let dataOfCities = prompt(`Введіть дані населених пунктів 
 //         1) Значення записуйте через кому (1 - корд х, 2 - корд у, 3 - назва населеного пункту, 4 - кількість населення)
 //         2) Пілся введення інформації про населений пункт перейдіть на новий рядок (шифт + ентер), та почніть записувати данні
 //         3) Не пишіть # перед значенням, це привиде до помилки`)
+let mus = {a:12312, b:12321312, c:12312312321312, d:1231244124124, g:21432412421, fg:21321321, gt:32423432432, ju:123123213213}
+
 let a = csvParse(`48.30,32.16,Кропивницький,1234,
 44.38,34.33,Алушта,1234,
 49.46,30.17,#Біла Церква,200131,
