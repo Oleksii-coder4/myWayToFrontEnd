@@ -1,3 +1,21 @@
+async function getData(config) {
+    let url = config.apiUrl
+    let response = await fetch(url)
+    let data = await response.json()
+    let users = Object.values(data.data)
+    DataTable(config, users)
+}
+let config = {
+    parent: '#usersTable',
+    columns: [
+        {title: 'Ім’я', value: 'name'},
+        {title: 'Прізвище', value: 'surname'},
+        {title: 'img', value: 'img'},
+        {title: 'birthday', value: 'date'},
+    ],
+    apiUrl: 'https://mock-api.shpp.me/OleksiiBokii/users'
+};
+getData(config)
 // функція яка малює таблички
 function DataTable(configData, data) {
     // копіювання данних щоб не було траблів
@@ -24,8 +42,14 @@ function DataTable(configData, data) {
             // перебираємо колонки, робимо з них хтмл та наповнюємо tr
             config.columns.forEach(function(item,index,array) {
                 let th = document.createElement('th')
-                th.innerHTML = item.title
-                theadTr.append(th)
+                if(item.title.startsWith('https://')) {
+                    th.innerHTML =`<img src="${item.title}"></img>`
+                    theadTr.append(th)
+                }else{
+                    th.innerHTML = item.title
+                    theadTr.append(th)
+                }
+                
             });
         }
         // перевіряємо чи є данні
@@ -44,26 +68,31 @@ function DataTable(configData, data) {
                 parentElement.querySelector('table').append(tbody)
             };
             // дістаємо тбоді
-            let tbody = document.querySelector(config.parent)
-                .querySelector('table')
+            let tbody = parentElement.querySelector('table')
                 .querySelector('tbody')
             // перебираємо массив данних 
             userData.forEach(function(item,index,array) {
                 // робимо під кожен об'єкт данних tr, та додаємо в Тбоді
                 let tr = document.createElement('tr')
                 tbody.append(tr)
-                // додаю першим значенням н, щоб потім замінити його на номер
-                item = {n: ' nubmer ', ...item}
+                // додаю першим значенням number, щоб потім замінити його на номер
+                let numTd = document.createElement('td')
+                numTd.style = 'padding: 10px;'
+                numTd.innerHTML = `${index+1}`
+                tr.append(numTd)
+                let button = document.createElement('button')
+                button.innerHTML = `delete`
                 // перебираємо обьект данних
                 Object.keys(item).forEach(function(key, innerIndex, innerArray) {
                     let td = document.createElement('td')
                     td.style = 'padding: 10px;'
                     // замінюю мої додані н 
-                    if(innerIndex == 0) {
-                        td.innerHTML = index + 1
-                        tr.append(td)
-                    }else if(key == 'id') {
+                    if(key == 'id') {
                         tr.setAttribute(key, item[key])
+                    // перевірка на картинку
+                    }else if(item[key].startsWith('https://')) {
+                        td.innerHTML = `<img src="${item[key]}"></img>`
+                        tr.append(td)
                     }else{
                         td.innerHTML = item[key]
                         tr.append(td)
@@ -86,42 +115,3 @@ function DataTable(configData, data) {
     }else{console.log('Enter parent in your config')}
     
 }
-
-const config1 = {
-parent: '#usersTable2',
-// columns: [
-//     {title: 'Ім’я', value: 'name'},
-//     {title: 'Прізвище', value: 'surname'},
-//     {title: 'Вік', value: 'age'},
-// ]
-};
-const config2 = {
-    parent: '#usersTable',
-    columns: [
-        {title: 'Ім’я', value: 'name'},
-        {title: 'Ім’я', value: 'name'},
-        {title: 'Прізвище', value: 'surname'},
-        {title: 'Вік', value: 'age'},
-    ]
-};
-const config3 = {
-    parent: '#usersTable3',
-    columns: [
-        {title: 'Ім’я', value: 'name'},
-        {title: 'Прізвище', value: 'surname'},
-        {title: 'Вік', value: 'age'},
-    ]
-};
-
-const users = [
-{id: 30050, name: 'Вася', surname: 'Петров', age: 12},
-{id: 30051, name: 'Вася', surname: 'Васечкін', age: 15},
-{id: 30050, name: 'Вася', surname: 'Петров', age: 12},
-{id: 30051, name: 'Вася', surname: 'Васечкін', age: 15},
-{id: 30050, name: 'Вася', surname: 'Петров', age: 12},
-{id: 30051, name: 'Вася', surname: 'Васечкін', age: 15},
-];
-DataTable(config2, users)
-DataTable(config3, users)
-DataTable(config1, users);
- 
