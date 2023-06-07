@@ -1,0 +1,68 @@
+[33mcommit dbd1371f6b4610a1e2f0a8885768f931361305ec[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Oleksii-coder4 <loklom.pp@gmail.com>
+Date:   Wed May 31 20:03:20 2023 +0300
+
+    -
+
+[33mcommit 726772a015cd7d890fcd16c8117171aab15942c9[m
+Author: Oleksii-coder4 <loklom.pp@gmail.com>
+Date:   Wed May 31 20:01:46 2023 +0300
+
+    http_requests_1task
+
+[33mcommit fe8d214d590cbac3adf146d0c902a5f09167f716[m
+Merge: 033ad4e 3069ed0
+Author: Oleksii-coder4 <loklom.pp@gmail.com>
+Date:   Tue May 23 21:40:11 2023 +0300
+
+    Merge branch 'main' of https://github.com/Oleksii-coder4/myWayToFrontEnd
+
+[33mcommit 033ad4e7b2817681d6bfea4b057c0baf7876c745[m
+Author: Oleksii-coder4 <loklom.pp@gmail.com>
+Date:   Tue May 23 21:37:51 2023 +0300
+
+    delete resum
+
+[33mcommit 73a4092570e91acb098b0fa3a73db5d725ed1534[m
+Author: Oleksii-coder4 <loklom.pp@gmail.com>
+Date:   Tue May 23 21:33:18 2023 +0300
+
+    DataTables commit changes
+
+[33mcommit 3069ed075ca7ae3498e05f73daae5d2271e67265[m
+Author: Oleksii-coder4 <71627200+Oleksii-coder4@users.noreply.github.com>
+Date:   Mon May 22 16:43:39 2023 +0300
+
+    Delete resume directory
+
+[33mcommit 1a00978c209555884a1c0a369f0447172a23b957[m
+Author: Oleksii-coder4 <loklom.pp@gmail.com>
+Date:   Thu May 18 14:23:46 2023 +0300
+
+    normal version of js_functionProgramming
+
+[33mcommit 87868d25c75819fbc677f858a549f82ee836c699[m
+Author: Oleksii-coder4 <loklom.pp@gmail.com>
+Date:   Wed May 17 21:45:07 2023 +0300
+
+    commit in js_functionProgramming, improve replace
+
+[33mcommit f69564a428bf91bbe859e1f1956a903bae54e618[m
+Author: Oleksii-coder4 <loklom.pp@gmail.com>
+Date:   Mon May 15 18:31:44 2023 +0300
+
+    Commit changes in file js_functionProgramming
+
+[33mcommit 487c57f8c00bbc8972cf189b6b1b82f0ce516bc0[m
+Author: Oleksii-coder4 <71627200+Oleksii-coder4@users.noreply.github.com>
+Date:   Sat May 13 15:12:51 2023 +0300
+
+    Create README.md
+    
+    currently empty
+
+[33mcommit 28d7ca658ab95dd9b3dc6a054d32857205dba9d3[m
+Author: Oleksii-coder4 <loklom.pp@gmail.com>
+Date:   Sat May 13 14:57:08 2023 +0300
+
+    First committ
