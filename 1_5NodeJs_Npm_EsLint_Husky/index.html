@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="src/css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title">Timer</title>
+</head>
+<body style="margin: 0;">
+    <main>
+        <div class="timer">
+            <h1>Timer</h1>
+    
+            <div class="timer__input-block">
+                <p>Вкажіть час в хвилинах</p>
+                <div class="timer__inputs">   
+                    <button class="timer__button timer__button-min" type="button">-</button>
+                    <input class="timer__input" type="number">
+                    <button class="timer__button timer__button-plus" type="button">+</button>
+                </div>
+                <button class="timer__button-start">Start</button>
+            </div>
+            
+            
+            <div class="timer__output-block display-none">
+                <p>Залишилось</p>
+                <h1>time</h1>
+            </div>
+        </div>
+    </main>
+    <script src="src/index.js"></script>
+</body>
+</html>

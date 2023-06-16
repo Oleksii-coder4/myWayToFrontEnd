@@ -1,0 +1,82 @@
+$timer-button-color: #4CAF50;
+body,h1 {
+    margin: 0;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+    background-color: rgb(76, 112, 112);
+}
+.timer {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+    min-height: 250px;
+    font-family: cursive;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: darkslategray;
+    color: #e8e8e8;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 1);
+}
+.timer__input-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.timer__inputs {
+    display: flex;
+}
+.timer__button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: $timer-button-color;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease;
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+.timer__input{
+    background-color: #395239;
+    padding: 5px;
+    border: 1px inset black;
+    text-align: center;
+    color: #b0f51d;
+    text-shadow: 0px 0px 6px #b0f51d;
+    box-shadow: inset 1px 1px 18px black;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.timer__button-start {
+    padding: 10px 20px;
+    background-color: $timer-button-color;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.timer__output-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0 0 0;
+    font-size: 20px;
+}
+
+.display-none {
+    display: none;
+}
